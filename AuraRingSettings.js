@@ -137,7 +137,9 @@ export class AuraRingSettings extends HandlebarsApplicationMixin(ApplicationV2) 
     }
 
     static register(config) {
-        const existing = config.form.querySelector(`[name=${AuraRing.namespace}]`)?.remove();
+        console.log("dummy", config);
+        const form = config.element.children[1];
+        const existing = form.querySelector(`[name=${AuraRing.namespace}]`)?.remove();
 
         const formApplication = new AuraRingSettings(config._preview);
 
@@ -157,11 +159,12 @@ export class AuraRingSettings extends HandlebarsApplicationMixin(ApplicationV2) 
         formGroup.setAttribute('name', AuraRing.namespace);
         formGroup.append(button);
 
-        config.form.children[2].insertBefore(
+        const identityTab = form.children[1];
+        identityTab.insertBefore(
             formGroup,
-            config.form.children[2].lastChild,
+            identityTab.lastChild,
         );
-        config.form.parentElement.parentElement.style.height = 'auto';
+        form.parentElement.parentElement.style.height = 'auto';
     }
 
     static sortAuraRings(first, second) {
