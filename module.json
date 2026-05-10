@@ -1,0 +1,23 @@
+{
+  "id": "token-aura-ring",
+  "title": "Token Aura Ring",
+  "description": "A module for Foundry VTT which adds an outlined ring aura to a token.",
+  "url": "https://github.com/JoToMo1993/Foundry_Module_Aura_Ring",
+  "manifest": "https://raw.githubusercontent.com/JoToMo1993/Foundry_Module_Aura_Ring/refs/heads/main/module.json",
+  "download": "https://github.com/JoToMo1993/Foundry_Module_Aura_Ring/archive/refs/heads/main.zip",
+  "authors": [
+    {
+      "name": "Jochen Morent",
+      "url": "https://github.com/JoToMo1993/",
+      "flags": {}
+    }
+  ],
+  "version": "0.0.1",
+  "compatibility": {
+    "minimum": "14",
+    "verified": "14"
+  },
+  "esmodules": [
+    "aura-ring.js"
+  ]
+}

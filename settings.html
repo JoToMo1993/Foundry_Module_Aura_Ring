@@ -1,0 +1,121 @@
+<div
+    class="flexrow"
+    style="margin: -1rem; height: 106%;"
+>
+    <aside
+        class="sidebar flexcol standard-form"
+        style="justify-content: space-between; overflow: auto;"
+    >
+        <nav class="tabs">
+            {{#each auraRings as |auraRing|}}
+                <div
+                    class="item category-tab category-all"
+                    data-group="auraRingTabs"
+                    data-aura="{{auraRing.id}}"
+                >
+                    <a
+                        data-action="changeTab"
+                        data-aura="{{auraRing.id}}"
+                    >{{auraRing.name}}</a>
+
+                    <button
+                        data-action="toggleHide"
+                        data-aura="{{auraRing.id}}"
+                        style="flex: 0; padding: 3px;"
+                        type="button"
+                    >
+                        <i class="fas {{#if auraRing.hide}}fa-eye-slash{{else}}fa-eye{{/if}}"></i>
+                    </button>
+                </div>
+            {{else}}
+                <p>No Aura Rings have been added.</p>
+                <p>Press the "Add Aura Ring" button below to create one.</p>
+            {{/each}}
+        </nav>
+
+        <footer style="margin-top: 1rem;">
+            <button
+                data-action="addAuraRing"
+                style="margin-bottom: 0.5rem; width: 100%;"
+                type="button"
+            >
+                <i class="fas fa-plus"></i> Add Aura Ring
+            </button>
+
+            <button
+                data-action="openDirectory"
+                style="margin-bottom: 0.5rem; width: 100%;"
+                type="button"
+            >
+                <i class="fas fa-folder-open"></i> Open Directory...
+            </button>
+
+            <button
+                data-action="pasteAuraRing"
+                {{disabled clipboardEmpty}}
+                style="margin-bottom: 0.5rem; width: 100%;"
+                type="button"
+            >
+                <i class="fas fa-paste"></i> Paste Aura Ring
+            </button>
+
+            <button
+                style="width: 100%;"
+                type="submit"
+            >
+                <i class="fas fa-save"></i> Save Changes
+            </button>
+        </footer>
+    </aside>
+
+    <main class="categories window-content">
+        {{#each auraRings as |auraRing|}}
+            <article
+                class="tab standard-form scrollable"
+                data-group="auraRingArticles"
+                data-aura="{{auraRing.id}}"
+                style="justify-content: space-between; margin-right: 0;"
+            >
+                {{ formGroup auraRing }}
+
+                <footer style="margin: 0; margin-top: 1rem;">
+                    <button 
+                        data-action="duplicateAuraRing"
+                        data-aura="{{auraRing.id}}"
+                        style="margin-bottom: 0.5rem; width: 100%;"
+                        type="button"
+                    >
+                        <i class="fas fa-clone"></i> Duplicate Aura Ring
+                    </button>
+
+                    <button 
+                        data-action="saveToDirectory"
+                        data-aura="{{auraRing.id}}"
+                        style="margin-bottom: 0.5rem; width: 100%;"
+                        type="button"
+                    >
+                        <i class="fas fa-folder-plus"></i> Save to Directory
+                    </button>
+
+                    <button 
+                        data-action="copyAuraRing"
+                        data-aura="{{auraRing.id}}"
+                        style="margin-bottom: 0.5rem; width: 100%;"
+                        type="button"
+                    >
+                        <i class="fas fa-copy"></i> Copy Aura Ring
+                    </button>
+
+                    <button
+                        data-action="deleteAuraRing"
+                        data-aura="{{auraRing.id}}"
+                        style="width: 100%;"
+                        type="button"
+                    >
+                        <i class="fas fa-trash"></i> Delete Aura Ring
+                    </button>
+                </footer>
+            </article>
+        {{/each}}
+    </main>
+</div>
