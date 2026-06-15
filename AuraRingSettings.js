@@ -163,7 +163,6 @@ export class AuraRingSettings extends HandlebarsApplicationMixin(ApplicationV2) 
         identityTab.appendChild(
             formGroup
         );
-        form.parentElement.parentElement.style.height = 'auto';
     }
 
     static sortAuraRings(first, second) {
