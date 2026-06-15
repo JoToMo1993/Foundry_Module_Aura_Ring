@@ -160,9 +160,8 @@ export class AuraRingSettings extends HandlebarsApplicationMixin(ApplicationV2) 
         formGroup.append(button);
 
         const identityTab = form.children[1];
-        identityTab.insertBefore(
-            formGroup,
-            identityTab.lastChild,
+        identityTab.appendChild(
+            formGroup
         );
         form.parentElement.parentElement.style.height = 'auto';
     }
