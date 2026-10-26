@@ -1,7 +1,7 @@
 export class AuraRing {
     static key = 'aura-rings';
 
-    static namespace = 'token-aura-ring';
+    static namespace = 'token-aura-ring-jtm';
 
     /** @type {number} How wide the Aura Ring should be, from 5 to 360 degrees */
     angle = 360;

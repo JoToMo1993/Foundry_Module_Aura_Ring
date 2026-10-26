@@ -43,7 +43,7 @@ export class AuraRingSettings extends HandlebarsApplicationMixin(ApplicationV2) 
 
     static PARTS = {
         main: {
-            template: 'modules/token-aura-ring/settings.html',
+            template: 'modules/token-aura-ring-jtm/settings.html',
         },
     };
 

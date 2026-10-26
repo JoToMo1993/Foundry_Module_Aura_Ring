@@ -32,7 +32,7 @@ export class AuraRingDirectory extends HandlebarsApplicationMixin(ApplicationV2)
 
     static PARTS = {
         main: {
-            template: 'modules/token-aura-ring/directory.html',
+            template: 'modules/token-aura-ring-jtm/directory.html',
         },
     };
 
